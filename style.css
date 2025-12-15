@@ -1,0 +1,202 @@
+:root{
+      --max-w:1200px;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --radius:12px;
+      --gap:24px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:#111;background:#f7fafc;line-height:1.5}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+    header{background:#fff;box-shadow:0 2px 8px rgba(15,23,42,0.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{font-weight:700;color:var(--accent);font-size:20px}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    nav a{text-decoration:none;color:var(--muted)}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:var(--gap);align-items:center;padding:60px 0; padding-top: 120px;}
+    .hero h1{font-size:36px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+    /* 3-col features */
+    .features{padding:48px 0;background:#fff;border-radius:var(--radius);margin-top:20px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fcfdff;padding:18px;border-radius:10px;box-shadow:0 1px 4px rgba(2,6,23,0.04)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    /* Portfolio / content block */
+    .content-block{padding:48px 0}
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .placeholder{height:180px;background:linear-gradient(90deg,#eef2ff,#f8fafc);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    /* Contact */
+    .contact{background:var(--accent);color:#fff;padding:40px;border-radius:12px;margin:30px 0}
+    .contact form{display:grid;grid-template-columns:1fr 140px;gap:12px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.15)}
+    textarea{resize:vertical}
+    footer{padding:18px 0;color:var(--muted);font-size:14px}
+    /* Responsive */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .house-photo {
+        height: 60%;
+        width: 200px;        /* будь-яка висота, яку хочеш */
+        object-fit: cover;    /* обрізає фото під потрібний розмір красиво */
+        border-radius: 10px;  /* щоб виглядало як інші елементи */
+        margin-bottom: 12px; 
+    }
+    .house-photo-main{
+        height: 180px;
+        width: 100%;        /* будь-яка висота, яку хочеш */
+        object-fit: cover;    /* обрізає фото під потрібний розмір красиво */
+        border-radius: 10px;  /* щоб виглядало як інші елементи */
+        margin-bottom: 12px; 
+    }
+    /* Загальний відступ секції */
+.faq {
+  padding: 48px 0;
+}
+
+/* Окремий елемент FAQ */
+.faq-item {
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-top: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* Стили summary */
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+/* Приховує стандартний трикутничок у браузерах */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Стиль тексту */
+.faq-item p {
+  margin-top: 10px;
+  color: #6b7280; /* muted */
+  line-height: 1.5;
+  font-size: 15px;
+}
+.contact {
+  background: #2563eb; /* твій основний акцент */
+  color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.contact .muted {
+  color: rgba(255,255,255,0.8);
+}
+
+.contact-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-item strong {
+  display: inline-block;
+  width: 100px;
+}
+
+.contact-item a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Список документів (якщо ще не маєш) */
+.docs-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.docs-list li { margin: 6px 0; }
+.docs-list a { color: #0066cc; text-decoration: none; }
+.docs-list a:hover { text-decoration: underline; }
+
+/* Попап для реквізитів */
+.payment-popup {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  display: none; /* приховано за замовчуванням */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25);
+  z-index: 3000;
+  padding: 20px;
+}
+
+.payment-popup[aria-hidden="false"] {
+  display: flex;
+}
+
+/* Сам прямокутник */
+.payment-popup__box {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 380px;
+  width: 100%;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+  position: relative;
+  font-size: 15px;
+  color: #111;
+}
+
+/* Заголовок */
+.payment-popup__box h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+/* Тіло */
+.payment-popup__body p {
+  margin: 6px 0;
+  color: #444;
+  line-height: 1.35;
+
+  /* ось ця властивість важлива */
+  white-space: pre-line;
+}
+
+/* Хрестик */
+.payment-popup__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
+
+/* Мобільна краса — трохи менший розмір */
+@media (max-width: 420px) {
+  .payment-popup__box { max-width: 320px; padding: 14px; }
+  .payment-popup__box h3 { font-size: 16px; }
+}
+
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .cols{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      .contact form{grid-template-columns:1fr}
+    }

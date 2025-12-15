@@ -1,0 +1,280 @@
+:root {
+  --max-w: 1200px;
+
+  /* BRAND COLORS */
+  --accent: #FFB74D;                   /* теплий янтарний акцент для заголовків */
+  --accent-hover: #FFA000;             /* темніший ховер */
+  --accent-secondary: #FFB34D;         /* кнопки / CTA, тепліший пом’якшений */
+  --accent-secondary-hover: #FFA000;
+
+  /* Neutral */
+  --muted: #CCCCCC;
+  --muted-light: #AAAAAA;
+
+  /* UI Backgrounds */
+  --bg-dark: #1E1E1E;                   /* пом’якшений темно-сірий фон */
+  --bg-card: #2A2A2A;                   /* блоки / карти трохи світліші */
+  --bg-section: #252525;                /* секції сайту */
+  --bg-contact: #3A2A1A;                /* темно-янтарний, менш яскравий */
+
+  --radius: 12px;
+  --gap: 24px;
+
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: #EEE;
+  background: var(--bg-dark);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: var(--bg-section);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.brand {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 22px;
+}
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: var(--gap);
+  align-items: center;
+  padding-top: 160px;
+  padding-bottom: 60px;
+  background: var(--bg-dark);
+  border-radius: var(--radius);
+}
+.hero h1 {
+  font-size: 42px;
+  margin: 0 0 16px;
+  color: #FFF;
+  line-height: 1.3;
+}
+.hero p {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 18px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-secondary-hover));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background: linear-gradient(135deg, var(--accent-secondary-hover), var(--accent-secondary));
+  transform: translateY(-2px);
+}
+
+/* Features / Cards */
+.features {
+  padding: 48px 0;
+}
+.features h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #FFF;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.85);
+}
+.card h3 {
+  margin: 12px 0 8px;
+  color: #FFF;
+}
+.docs-list li {
+  margin: 6px 0;
+}
+.docs-list a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.docs-list a:hover {
+  color: var(--accent-secondary-hover);
+  text-decoration: underline;
+}
+
+/* House photos */
+.house-photo,
+.house-photo-main {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+.house-photo { height: 160px; }
+.house-photo-main { height: 220px; }
+
+/* FAQ */
+.faq {
+  padding: 48px 0;
+}
+.faq h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #FFF;
+}
+.faq-item {
+  background: var(--bg-card);
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  margin-top: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.85);
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  list-style: none;
+  color: #FFF;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Contact */
+.contact {
+  background: var(--bg-contact);   /* пом’якшений колір контакти */
+  color: #FFF;
+  padding: 48px 20px;
+  border-radius: var(--radius);
+  margin: 40px 0;
+}
+.contact h2 { color: #FFF; }
+.contact .muted { color: rgba(255,255,255,0.85); }
+.contact-list { margin-top: 20px; display: grid; gap: 14px; }
+.contact-item strong { display: inline-block; width: 120px; }
+.contact-item a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+.contact-item a:hover { color: #FFD699; }
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  color: var(--muted-light);
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Payment Popup */
+.payment-popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 3000;
+  padding: 20px;
+}
+.payment-popup[aria-hidden="false"] { display: flex; }
+.payment-popup__box {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  max-width: 380px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.85);
+  position: relative;
+  font-size: 15px;
+  color: #EEE;
+  animation: popupFade 0.3s ease;
+}
+.payment-popup__box h3 { margin: 0 0 10px; font-size: 18px; }
+.payment-popup__body p { margin: 6px 0; color: #CCC; line-height: 1.35; white-space: pre-line; }
+.payment-popup__close { position: absolute; top: 10px; right: 10px; border: none; background: none; font-size: 18px; cursor: pointer; padding: 6px; line-height: 1; }
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(2,1fr); }
+  nav ul { display: none; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .contact form { grid-template-columns: 1fr; }
+}
